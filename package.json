@@ -1,0 +1,24 @@
+{
+  "name": "portfoliorailway",
+  "version": "1.0.0",
+  "description": "A portfolio website with railway theme",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "test": "echo \"No tests available\""
+  },
+  "keywords": ["portfolio", "railway", "website"],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "18.16.1",
+    "npm": "8.4.1"
+  }
+}
