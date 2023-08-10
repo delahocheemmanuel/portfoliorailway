@@ -1,6 +1,6 @@
 // server/index.js
 const path = require('path'); // A NE PAS OMETTRE!
-const express = require('express');
+
 const express = require('express');
 
 const PORT = process.env.PORT || 3001;
