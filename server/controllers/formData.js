@@ -2,39 +2,36 @@ const nodemailer = require("nodemailer");
 require('dotenv').config();
 const FormData = require('../models/formData');
 
-exports.sendFormData = async (req, res) => {
+exports.sendFormData = async (req, res) => { // Fonction pour envoyer un e-mail
     try {
-        console.log('Starting sendFormData function');
+        const { name, email, message } = req.body; // Récupère les données du corps de la requête
+        const formData = new FormData({ name, email, message }); // Crée une instance du modèle de données
+        await formData.save(); // Enregistre les données dans la base de données
         
-        const { name, email, message } = req.body;
-        console.log('Received data:', name, email, message);
-        
-        const Mail = process.env.SMTP_USERNAME;
-        const Password = process.env.SMTP_PASSWORD;
-        
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
+        const transporter = nodemailer.createTransport({ // Crée un transporteur Nodemailer pour l'envoi d'e-mails
+            service: 'Gmail', // Utilise le service Gmail
             auth: {
-                user: Mail,
-                pass: Password
+                user: SMTP_USERNAME, // Utilisateur pour l'authentification
+                pass: SMTP_PASSWORD // Mot de passe pour l'authentification
+            },
+            tls: {
+                rejectUnauthorized: false // N'autorise pas la vérification du certificat SSL
             }
         });
         
-        const formData = new FormData({ name, email, message }); // Corrected line
-        
         const mailOptions = {
-            replyTo: formData.email, // Using formData here
-            to: Mail,
-            subject: 'Contact portfolio',
-            text: `Nom: ${formData.name}\nE-mail: ${formData.email}\nMessage: ${formData.message}`
+            replyTo: formData.email, // Définit l'adresse de réponse sur l'e-mail de l'expéditeur
+            to: RECIPIENT_EMAIL, // Définit l'adresse du destinataire de l'e-mail
+            subject: 'Contact portfolio', // Définit le sujet de l'e-mail
+            text: `Nom : ${name}\nE-mail : ${email}\nMessage : ${message}` // Corps de l'e-mail
         };
+
+        const info = await transporter.sendMail(mailOptions); // Envoie l'e-mail
+        console.log('E-mail envoyé :', info.response); // Affiche la réponse d'envoi dans la console
         
-        const info = await transporter.sendMail(mailOptions);
-        console.log('E-mail sent:', info.response);
-        
-        res.status(201).json({ message: 'E-mail envoyé!' });
+        res.status(201).json({ message: 'E-mail envoyé avec succès !' }); // Répond avec un message de succès
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'E-mail non envoyé' });
+        console.error('Erreur lors de l\'envoi de l\'e-mail :', error); // Affiche l'erreur dans la console
+        res.status(500).json({ error: 'E-mail non envoyé' }); // Répond avec une erreur
     }   
 };
