@@ -1,7 +1,7 @@
 // app.js
 const express = require("express");
 const mongoose = require("mongoose");
-const formDataRouter = require("./routes/formData");
+
 const cors = require("cors");
 require('dotenv').config();
 const app = express();
@@ -18,8 +18,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error("MongoDB connection error:", error));
 
-// Routes
-app.use("/api/formData", formDataRouter); // Définir la route pour le formulaire de contact
+
 
 module.exports = app;
 
