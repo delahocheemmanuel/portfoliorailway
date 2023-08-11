@@ -14,7 +14,7 @@ const Contact = () => {
   
     try {
       // Envoi des données au backend (port 4000)
-      const response = await fetch("https://portfolio-fps1.onrender.com/api/formData/save", {
+      const response = await fetch("https://portfolio-fps1.onrender.com/api/formData/save"||"http://localhost:4000/api/formData/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Contact = () => {
       console.log(data); // Affiche la réponse du backend
   
       // Envoi d'un e-mail en utilisant une autre fonction du backend (port 4000)
-      const emailResponse = await fetch("https://portfolio-fps1.onrender.com/api/formData/send-email", {
+      const emailResponse = await fetch("https://portfolio-fps1.onrender.com/api/formData/send-email"||"http://localhost:4000/api/formData/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
