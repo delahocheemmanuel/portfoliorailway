@@ -7,6 +7,6 @@ const FormDataController = require("../controllers/formData");
 
 
 // Route pour envoyer un e-mail
-router.post("/contact", FormDataController.sendFormData);
+router.post("/send-email", FormDataController.sendFormData);
 
 module.exports = router;

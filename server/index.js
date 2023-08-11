@@ -1,12 +1,16 @@
 //server/index.js
 const path = require('path');
 const express = require('express');
+const cors = require("cors");
 const formDataRouter = require('./routes/formData');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+// Middleware pour gérer les erreurs de CORS
+app.use(cors());
 
 app.use(express.json()); // Middleware pour le traitement des données JSON
 
