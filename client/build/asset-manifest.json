@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9d68e059.css",
-    "main.js": "/static/js/main.74755025.js",
+    "main.js": "/static/js/main.531dbe12.js",
     "static/media/kasa_1.jpg": "/static/media/kasa_1.8e443ef409bffc706796.jpg",
     "static/media/grimoire_1.jpg": "/static/media/grimoire_1.b9d38fbc394f64a66d66.jpg",
     "static/media/booki_1.jpg": "/static/media/booki_1.963ccb738d0fe0b71b4b.jpg",
@@ -11,10 +11,10 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.9d68e059.css.map": "/static/css/main.9d68e059.css.map",
-    "main.74755025.js.map": "/static/js/main.74755025.js.map"
+    "main.531dbe12.js.map": "/static/js/main.531dbe12.js.map"
   },
   "entrypoints": [
     "static/css/main.9d68e059.css",
-    "static/js/main.74755025.js"
+    "static/js/main.531dbe12.js"
   ]
 }
