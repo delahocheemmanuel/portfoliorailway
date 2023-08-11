@@ -10,7 +10,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.use(express.json()); // Middleware pour le traitement des données JSON
 
-app.use('/api/formData', formDataRouter); // Définir la route pour le formulaire de contact
+app.use('/api/formData/', formDataRouter); // Définir la route pour le formulaire de contact
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
