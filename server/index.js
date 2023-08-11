@@ -13,7 +13,7 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
 
-
+  app.use("/api/formData", formDataRouter); // Définir la route pour le formulaire de contact
   
   app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
