@@ -7,6 +7,6 @@ const limiter = require("../middleware/rate-limit"); // Middleware pour limiter 
 
 
 // Route pour envoyer un e-mail
-router.post("/send-email", limiter, FormDataController.sendFormData);
+router.post("/Contact", limiter, FormDataController.sendFormData);
 
 module.exports = router;
