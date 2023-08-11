@@ -1,0 +1,71 @@
+/* About.css */
+
+.cv__container {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv__header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .cv__header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .cv__header p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .cv__section {
+    margin-bottom: 30px;
+  }
+  
+  .cv__section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+  }
+  
+  .cv__section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cv__section li {
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #888;
+  }
+  
+  /* Media Query pour les petits écrans */
+  @media screen and (max-width: 600px) {
+    .cv__header h1 {
+      font-size: 28px;
+    }
+  
+    .cv__header p {
+      font-size: 14px;
+    }
+  
+    .cv__section h2 {
+      font-size: 24px;
+    }
+  }
+  

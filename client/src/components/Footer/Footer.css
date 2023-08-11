@@ -1,0 +1,31 @@
+/* CSS pour le footer */
+footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte du footer */
+    padding: 10px; /* Espacement interne du footer */
+    position: fixed; /* Le footer restera en bas de la page */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Largeur du footer */
+    display: flex; /* Pour afficher les éléments les uns à côté des autres */
+    height: 5%;
+  }
+  
+  .footer {
+    display: flex; /* Pour afficher les éléments en ligne */
+    align-items: center; /* Alignement vertical des éléments au centre */
+    justify-content: center; /* Alignement horizontal des éléments au centre */
+  }
+  
+  .footer img {
+    height: 30px; /* Hauteur de l'image du footer (ajustez selon vos besoins) */
+    margin-right: 10px; /* Espacement à droite de l'image */
+  }
+  
+  .footer h2 {
+    margin: 0; /* Supprime les marges par défaut autour du titre */
+    font-size: 1.5rem; /* Taille du titre */
+    align-items: center; /* Alignement vertical du texte au centre */
+    justify-content: center; /* Alignement horizontal du texte au centre */
+  }
+  
